@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>On The Half Shell — Seafood &amp; Oyster Bar | Prairieville, LA</title>
+<meta name="description" content="On The Half Shell — a Prairieville, Louisiana seafood and oyster bar for 20+ years. Fresh Gulf oysters, boiled seafood, po'boys, Sunday brunch, and live music six nights a week. Reserve a table online." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="On The Half Shell — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none">
+          <path d="M24 4C13 4 4 14 4 27c0 9 8 17 20 17s20-8 20-17C44 14 35 4 24 4Z" fill="url(#shellg)" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M24 6c1 8 1 22 0 36M14 8c3 8 4 22 3 32M34 8c-3 8-4 22-3 32M8 16c6 5 9 18 8 26M40 16c-6 5-9 18-8 26" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+          <defs>
+            <linearGradient id="shellg" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f6ecd8"/><stop offset="1" stop-color="#d9c39a"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>On The Half Shell</strong>
+        <small>Seafood &amp; Oyster Bar</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#music">Live Music</a></li>
+        <li><a href="#events">Private Events</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="nav-call" href="tel:+12256731951">(225) 673-1951</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <!-- data-photo: replace with a wide dusk photo of the raw bar / neon sign -->
+      <div class="hero-waves">
+        <svg viewBox="0 0 1440 240" preserveAspectRatio="none" width="100%" height="100%">
+          <path class="wave w1" d="M0 120 Q 180 80 360 120 T 720 120 T 1080 120 T 1440 120 V240 H0 Z"/>
+          <path class="wave w2" d="M0 150 Q 180 110 360 150 T 720 150 T 1080 150 T 1440 150 V240 H0 Z"/>
+          <path class="wave w3" d="M0 180 Q 180 145 360 180 T 720 180 T 1080 180 T 1440 180 V240 H0 Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Prairieville, Louisiana · Since 2003</p>
+      <h1 id="hero-title" class="reveal">Gulf oysters, cold beer,<br /><span class="accent">live music by the dozen.</span></h1>
+      <p class="hero-sub reveal">Twenty-plus years shucking the freshest Louisiana seafood on Perkins Road — boiled crawfish, dressed po'boys, and a band on stage six nights a week. Pull up a stool.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#reserve">Reserve a Table</a>
+        <a class="btn btn-ghost" href="#order">Order Online</a>
+      </div>
+      <ul class="hero-stats reveal" aria-label="At a glance">
+        <li><strong>20+</strong><span>Years on Perkins Rd</span></li>
+        <li><strong>6 nights</strong><span>Of live music</span></li>
+        <li><strong>220+</strong><span>Five-star reviews</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ORDER / QUICK ACTIONS ============ -->
+  <section class="quick" id="order" aria-label="Order online and gift cards">
+    <div class="wrap quick-grid">
+      <a class="quick-card reveal" href="#reserve">
+        <span class="qc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+        </span>
+        <span class="qc-text"><strong>Reserve a Table</strong><small>New — book online in seconds</small></span>
+      </a>
+      <a class="quick-card reveal" href="#" data-noop aria-label="Order online for pickup (opens ordering)">
+        <span class="qc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2h12l1 5H5l1-5Z"/><path d="M5 7v13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7"/><path d="M9 11h6"/></svg>
+        </span>
+        <span class="qc-text"><strong>Order Online — Pickup</strong><small>Ready when you are</small></span>
+      </a>
+      <a class="quick-card reveal" href="#" data-noop aria-label="Order online for delivery (opens ordering)">
+        <span class="qc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 4h13v11H1z"/><path d="M14 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg>
+        </span>
+        <span class="qc-text"><strong>Order Online — Delivery</strong><small>Straight to your door</small></span>
+      </a>
+      <a class="quick-card reveal" href="#" data-noop aria-label="Buy a gift card">
+        <span class="qc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M12 6c-1.5-3-6-2-4 1M12 6c1.5-3 6-2 4 1"/></svg>
+        </span>
+        <span class="qc-text"><strong>Gift Cards</strong><small>Give a night out</small></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">From the raw bar &amp; the kitchen</p>
+        <h2 id="menu-title">Menu highlights</h2>
+        <p class="section-lead">Everything is dressed the Louisiana way. Ask your server about today's lunch special and whatever came off the boat this morning.</p>
+      </header>
+
+      <div class="menu-grid">
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Oysters on the Half Shell</h3><span class="price">Mkt</span></div>
+          <p>Cold, briny Gulf oysters shucked to order. Raw by the half or full dozen, or chargrilled with garlic butter and parmesan.</p>
+          <ul class="tags"><li>Raw</li><li>Chargrilled</li><li>Dozen &amp; half</li></ul>
+        </article>
+
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Boiled Seafood</h3><span class="price">Seasonal</span></div>
+          <p>Crawfish in season, plus boiled shrimp and snow crab — spiced just right and piled high. Add corn, potatoes, and sausage.</p>
+          <ul class="tags"><li>Crawfish</li><li>Shrimp</li><li>Snow crab</li></ul>
+        </article>
+
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Po'boys</h3><span class="price">$13+</span></div>
+          <p>Fried shrimp, oyster, catfish, or roast beef debris on crisp French bread, dressed with lettuce, tomato, and pickles.</p>
+          <ul class="tags"><li>Shrimp</li><li>Oyster</li><li>Roast beef</li></ul>
+        </article>
+
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Seafood Platters</h3><span class="price">$22+</span></div>
+          <p>The full spread — fried shrimp, oysters, catfish, and stuffed crab with fries and hushpuppies. Come hungry.</p>
+          <ul class="tags"><li>Fried</li><li>Grilled</li><li>Combos</li></ul>
+        </article>
+
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Sunday Brunch</h3><span class="price">$14+</span></div>
+          <p>Shrimp &amp; grits, crawfish omelets, and eggs Benedict with a Louisiana twist — served alongside live music every Sunday.</p>
+          <ul class="tags"><li>Shrimp &amp; grits</li><li>Benedicts</li><li>Bloody Marys</li></ul>
+        </article>
+
+        <article class="menu-card reveal">
+          <div class="menu-card-top"><h3>Daily Lunch Specials</h3><span class="price">$11+</span></div>
+          <p>A rotating plate lunch every weekday — think crawfish étouffée, red beans, or fried seafood with two sides. In and out fast.</p>
+          <ul class="tags"><li>Weekdays</li><li>Rotating</li><li>Two sides</li></ul>
+        </article>
+      </div>
+
+      <p class="menu-note reveal">Prices illustrative for this concept. Full menu &amp; daily specials posted in-house and online.</p>
+    </div>
+  </section>
+
+  <!-- ============ RESERVE (MONEY FEATURE) ============ -->
+  <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="wrap reserve-grid">
+      <div class="reserve-copy reveal">
+        <p class="kicker light">New this year</p>
+        <h2 id="reserve-title">Reserve a table online</h2>
+        <p>No more phone tag. Pick your night, tell us your party size, and we'll have a stool waiting — whether you're here for the raw bar, a boiled seafood spread, or a front-row seat to the band.</p>
+        <ul class="reserve-perks">
+          <li><span aria-hidden="true">✓</span> Instant weeknight &amp; weekend booking</li>
+          <li><span aria-hidden="true">✓</span> Request a table near the stage</li>
+          <li><span aria-hidden="true">✓</span> Parties up to 12 — bigger? See private events</li>
+        </ul>
+        <p class="reserve-callback">Prefer to talk to us? Call <a href="tel:+12256731951">(225) 673-1951</a>.</p>
+      </div>
+
+      <form class="reserve-form reveal" id="reserve-form" novalidate>
+        <h3>Book your table</h3>
+        <div class="field">
+          <label for="r-name">Name</label>
+          <input type="text" id="r-name" name="name" autocomplete="name" required placeholder="Full name" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-phone">Phone</label>
+            <input type="tel" id="r-phone" name="phone" autocomplete="tel" required placeholder="(225) 555-0123" />
+          </div>
+          <div class="field field-sm">
+            <label for="r-party">Party size</label>
+            <select id="r-party" name="party" required>
+              <option value="" disabled selected>Guests</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10</option><option>11</option><option>12</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-date">Date</label>
+            <input type="date" id="r-date" name="date" required />
+          </div>
+          <div class="field">
+            <label for="r-time">Time</label>
+            <input type="time" id="r-time" name="time" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-notes">Special requests <span class="opt">(optional)</span></label>
+          <input type="text" id="r-notes" name="notes" placeholder="Near the stage, high chair, allergies…" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Request Reservation</button>
+        <p class="form-status" id="reserve-status" role="status" aria-live="polite"></p>
+        <p class="form-fineprint">Concept demo — this form is not yet wired to a live booking system.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ LIVE MUSIC ============ -->
+  <section class="music" id="music" aria-labelledby="music-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Six nights a week on the Perkins Rd stage</p>
+        <h2 id="music-title">Live music calendar</h2>
+        <p class="section-lead">Local Louisiana talent — brass, blues, zydeco, and country. No cover, no reservation needed for the bar, but book a table if you want a seat near the stage.</p>
+      </header>
+
+      <div class="music-cal">
+        <div class="gig reveal"><span class="gig-day">Tue</span><span class="gig-info"><strong>Bayou Brass Trio</strong><small>Jazz &amp; second-line · 6–9 PM</small></span><span class="gig-tag">Weekly</span></div>
+        <div class="gig reveal"><span class="gig-day">Wed</span><span class="gig-info"><strong>Delta Blue</strong><small>Swamp blues · 6–9 PM</small></span><span class="gig-tag">Weekly</span></div>
+        <div class="gig reveal"><span class="gig-day">Thu</span><span class="gig-info"><strong>Zydeco Night</strong><small>Rotating accordion acts · 6:30–9:30 PM</small></span><span class="gig-tag">Weekly</span></div>
+        <div class="gig reveal"><span class="gig-day">Fri</span><span class="gig-info"><strong>The Perkins Rd Band</strong><small>Country &amp; rock · 7–10 PM</small></span><span class="gig-tag">Weekly</span></div>
+        <div class="gig reveal"><span class="gig-day">Sat</span><span class="gig-info"><strong>Featured Live Act</strong><small>Rotating headliner · 7–10 PM</small></span><span class="gig-tag">Weekly</span></div>
+        <div class="gig reveal gig-sun"><span class="gig-day">Sun</span><span class="gig-info"><strong>Brunch Sessions</strong><small>Acoustic &amp; soul · 11 AM–2 PM</small></span><span class="gig-tag">Brunch</span></div>
+      </div>
+      <p class="menu-note reveal">Lineups rotate — call ahead to confirm the night's act.</p>
+    </div>
+  </section>
+
+  <!-- ============ PRIVATE EVENTS ============ -->
+  <section class="events" id="events" aria-labelledby="events-title">
+    <div class="wrap reserve-grid">
+      <div class="reserve-copy reveal">
+        <p class="kicker">The Perkins Room</p>
+        <h2 id="events-title">Private events &amp; catering</h2>
+        <p>Rehearsal dinners, birthdays, crawfish boils, corporate lunches — our private "Perkins Room" seats your group with a dedicated menu and optional live music. We also cater off-site across Ascension Parish.</p>
+        <ul class="reserve-perks">
+          <li><span aria-hidden="true">✓</span> Seated groups up to 60 in The Perkins Room</li>
+          <li><span aria-hidden="true">✓</span> Custom boiled-seafood &amp; platter menus</li>
+          <li><span aria-hidden="true">✓</span> On- or off-site catering</li>
+        </ul>
+      </div>
+
+      <form class="reserve-form reveal" id="event-form" novalidate>
+        <h3>Tell us about your event</h3>
+        <div class="field">
+          <label for="e-name">Name</label>
+          <input type="text" id="e-name" name="name" autocomplete="name" required placeholder="Full name" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="e-email">Email</label>
+            <input type="email" id="e-email" name="email" autocomplete="email" required placeholder="you@email.com" />
+          </div>
+          <div class="field field-sm">
+            <label for="e-count">Guests</label>
+            <input type="number" id="e-count" name="count" min="1" max="200" required placeholder="30" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="e-type">Event type</label>
+          <select id="e-type" name="type" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Birthday / celebration</option>
+            <option>Rehearsal dinner</option>
+            <option>Corporate / business lunch</option>
+            <option>Crawfish boil</option>
+            <option>Off-site catering</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="e-details">Details <span class="opt">(optional)</span></label>
+          <input type="text" id="e-details" name="details" placeholder="Date, budget, live music…" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        <p class="form-status" id="event-status" role="status" aria-live="polite"></p>
+        <p class="form-fineprint">Concept demo — inquiry is not yet delivered to a live inbox.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">220+ five-star reviews</p>
+        <h2 id="reviews-title">Regulars keep coming back</h2>
+      </header>
+      <div class="reviews-grid">
+        <figure class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Freshest oysters in Ascension Parish, hands down. We come every Friday for the band and never leave disappointed.</blockquote>
+          <figcaption>— Danielle T., Prairieville</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Booked the Perkins Room for my dad's 60th. The boiled seafood spread was unreal and the staff treated us like family.</blockquote>
+          <figcaption>— Marcus L., Gonzales</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Sunday brunch with live music is our little tradition. Shrimp and grits, a Bloody Mary, and zydeco — perfect.</blockquote>
+          <figcaption>— The Hebert Family, Baton Rouge</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap visit-grid">
+      <div class="visit-info reveal">
+        <p class="kicker">Come see us</p>
+        <h2 id="visit-title">Visit On The Half Shell</h2>
+        <p class="visit-addr">
+          37390 Perkins Rd<br />
+          Prairieville, LA 70769
+        </p>
+        <p class="visit-call">
+          <a class="btn btn-primary" href="tel:+12256731951">Call (225) 673-1951</a>
+        </p>
+
+        <dl class="hours">
+          <div><dt>Mon</dt><dd>11 AM – 9 PM</dd></div>
+          <div><dt>Tue – Thu</dt><dd>11 AM – 9 PM · <em>Live music from 6 PM</em></dd></div>
+          <div><dt>Fri – Sat</dt><dd>11 AM – 10 PM · <em>Live music from 7 PM</em></dd></div>
+          <div><dt>Sun</dt><dd>10 AM – 8 PM · <em>Brunch &amp; music 11 AM</em></dd></div>
+        </dl>
+
+        <div class="visit-actions">
+          <a class="btn btn-ghost dark" href="#reserve">Reserve a Table</a>
+          <a class="btn btn-ghost dark" href="#" data-noop>Order Online</a>
+        </div>
+      </div>
+
+      <div class="visit-map reveal" role="img" aria-label="Stylized map marker for 37390 Perkins Rd, Prairieville, Louisiana">
+        <!-- data-photo: replace with an embedded static map / storefront photo -->
+        <div class="map-grid" aria-hidden="true"></div>
+        <div class="map-pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+        </div>
+        <div class="map-card" aria-hidden="true">
+          <strong>On The Half Shell</strong>
+          <span>37390 Perkins Rd · Prairieville</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-text">
+        <strong>On The Half Shell</strong>
+        <small>Seafood &amp; Oyster Bar · Since 2003</small>
+      </span>
+      <p>37390 Perkins Rd, Prairieville, LA 70769</p>
+      <p><a href="tel:+12256731951">(225) 673-1951</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#music">Live Music</a>
+      <a href="#events">Private Events</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="footer-order">
+      <a class="btn btn-ghost dark" href="#" data-noop>Order — Pickup</a>
+      <a class="btn btn-ghost dark" href="#" data-noop>Order — Delivery</a>
+      <a class="btn btn-ghost dark" href="#" data-noop>Gift Cards</a>
+    </div>
+  </div>
+  <div class="footer-base wrap">
+    <p>&copy; <span id="year"></span> On The Half Shell. All rights reserved.</p>
+    <p class="concept-note">Redesign concept — an unsolicited design pitch, not the official site.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
