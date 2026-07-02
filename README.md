@@ -1,35 +1,43 @@
 # On The Half Shell — Redesign Concept
 
-A modern, single-page website **redesign concept** for **On The Half Shell**, the seafood & oyster bar at 37390 Perkins Rd, Prairieville, LA — serving fresh Louisiana seafood with live music six nights a week for 20+ years.
+A modern, single-page website **redesign concept** for **On The Half Shell**, the oyster bar & seafood restaurant at 37390 Perkins Rd, Prairieville, LA — serving fresh Louisiana seafood with live music for 20+ years.
 
 This is an **unsolicited design concept / pitch**, not the official site.
 
 ## Why this redesign
 
-The current site (onthehalfshell.biz) is functional but:
+The current site ([onthehalfshell.biz](https://www.onthehalfshell.biz/)) works, but:
 
-- **Visually dated** — old serif template with flat styling that doesn't reflect a lively, 20-year oyster bar with live music.
-- **Reservations by phone only** — guests have to call and leave a voicemail to book a table.
+- **Visually dated** — a stock template that doesn't reflect a lively, 20-year oyster bar and live-music room.
+- **Reservations by phone only** — the current site notes that "reservation and catering information is available by calling." There's no way to request a table online.
+- **Menu buried** — the food and prices don't get a confident, editorial presentation.
 
-This concept modernizes the look (deep navy + oyster cream + warm brass, nautical SVG accents, polished motion) and adds the key upgrade:
+This concept keeps everything real and adds the key upgrade.
 
-- **Online reservations** — a "Reserve a Table" form (name, phone, party size, date, time).
-- **Live Music Calendar** — a styled weekly schedule of who's on stage.
-- **Private-event inquiry** — a form for booking The Perkins Room / catering.
-- Keeps the existing **Order Online (Pickup / Delivery)** and **Gift Cards** actions prominent.
+## What's real here
 
-## What's included
+- **Their actual photos.** Hero and gallery use On The Half Shell's own photography, pulled from their live site's image CDN (raw oysters, chargrilled platter, boiled shrimp, oyster po'boy & gumbo, the bar at night, the dining room, live-music). See `assets/photos/`.
+- **Their full, real menu with real prices** — raw & chargrilled oysters, appetizers, gumbos, salads, platters, specialties, steaks, burgers & po'boys, "just enough" plates, sides, kids, and desserts.
+- **Their real ordering & gift links, preserved as working links:**
+  - Order pickup → their **Toast** ordering page
+  - Order delivery → their **DoorDash** store
+  - Gift cards → their **Toast eGift Cards** page
+  - Catering inquiry & full music calendar → their existing pages
+- **Real hours** (Sun 10–9, Mon 11–9, Tue–Fri 11–10, Sat 4–10) and **real live-music schedule** (Tue–Sat evenings + Sunday brunch).
 
-- Menu highlights in real HTML (oysters, boiled seafood, po'boys, platters, brunch, daily specials) — no PDF.
-- Click-to-call phone, hours, and a stylized location block.
-- Illustrative testimonials and trust signals (20+ years, 220+ reviews, live music).
+## The upgrade
+
+- **Online reservation request** — a real form (name, phone, party size, date, time, notes) that replaces phone-only booking. It is styled and validated but **not yet wired** to a live inbox (marked as a concept demo), so no fake confirmations are implied.
+
+## Design
+
+Distinct coastal oyster-bar direction: **deep navy + oyster cream + warm brass**, matching their real navy logo. Varied editorial layouts — a split raw-bar feature, real menu tables, a full-bleed photo gallery, alternating image/text rows, a quote band — rather than a grid of icon cards. Animated shrink-on-scroll nav, animated underlines, a real mobile menu, and scroll-reveal motion that respects `prefers-reduced-motion`.
 
 ## How to view
 
-Just open **`index.html`** in any modern browser (double-click it). No build step, no dependencies, works offline.
+Open **`index.html`** in any modern browser (double-click it). Fully static: `index.html` + `styles.css` + `script.js` + `assets/`. No build step, no dependencies.
 
 ## Notes
 
-- Fully static: `index.html` + `styles.css` + `script.js`.
-- Forms and the Order/Gift Card buttons are **styled but not wired** — this is a visual concept.
-- Imagery uses CSS gradients and inline SVG; gradient placeholders mark where real photos would go.
+- Photos are the business's own, optimized to < 400 KB each for the web.
+- The reservation form is the only non-wired element; every order/gift/catering/directions link points to the real destination.

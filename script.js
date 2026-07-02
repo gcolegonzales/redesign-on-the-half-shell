@@ -2,10 +2,10 @@
 (function () {
   "use strict";
 
-  /* ---- Sticky header shrink ---- */
+  /* ---- Sticky header shrink-on-scroll ---- */
   var header = document.getElementById("site-header");
   var onScroll = function () {
-    if (window.scrollY > 24) header.classList.add("scrolled");
+    if (window.scrollY > 20) header.classList.add("scrolled");
     else header.classList.remove("scrolled");
   };
   onScroll();
@@ -18,6 +18,7 @@
     menu.classList.toggle("open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
   };
   toggle.addEventListener("click", function () {
     setOpen(!menu.classList.contains("open"));
@@ -28,10 +29,20 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") setOpen(false);
   });
+  document.addEventListener("click", function (e) {
+    if (
+      menu.classList.contains("open") &&
+      !e.target.closest("#nav-menu") &&
+      !e.target.closest("#nav-toggle")
+    ) {
+      setOpen(false);
+    }
+  });
 
   /* ---- Scroll reveal ---- */
   var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -52,53 +63,32 @@
     });
   }
 
-  /* ---- Reserve date min = today ---- */
+  /* ---- Reservation date min = today ---- */
   var dateInput = document.getElementById("r-date");
   if (dateInput) {
-    var today = new Date();
-    var iso = today.toISOString().split("T")[0];
-    dateInput.min = iso;
+    dateInput.min = new Date().toISOString().split("T")[0];
   }
 
-  /* ---- Non-wired form handling (concept demo) ---- */
-  function wireForm(formId, statusId, message) {
-    var form = document.getElementById(formId);
-    var status = document.getElementById(statusId);
-    if (!form) return;
+  /* ---- Reservation request form (concept demo, not wired) ---- */
+  var form = document.getElementById("reserve-form");
+  var status = document.getElementById("reserve-status");
+  if (form && status) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      var name = (form.querySelector('input[name="name"]') || {}).value || "";
-      var first = name.trim().split(" ")[0];
-      status.textContent = message(first);
+      var nameField = form.querySelector('input[name="name"]');
+      var first = ((nameField && nameField.value) || "").trim().split(" ")[0];
+      status.textContent =
+        (first ? "Thanks, " + first + "! " : "Thanks! ") +
+        "This is a concept demo — the live version would send your request to the restaurant. For now, please call (225) 673-1951 to confirm.";
       form.querySelectorAll("input, select, button").forEach(function (el) {
         el.setAttribute("disabled", "disabled");
       });
     });
   }
-
-  wireForm("reserve-form", "reserve-status", function (name) {
-    return (
-      (name ? "Thanks, " + name + "! " : "Thanks! ") +
-      "This is a concept demo — in the live version we'd confirm your table here."
-    );
-  });
-  wireForm("event-form", "event-status", function (name) {
-    return (
-      (name ? "Got it, " + name + "! " : "Got it! ") +
-      "Concept demo — the live version would route your inquiry to the events team."
-    );
-  });
-
-  /* ---- Prevent placeholder links from jumping ---- */
-  document.querySelectorAll('a[data-noop]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-    });
-  });
 
   /* ---- Footer year ---- */
   var yr = document.getElementById("year");
