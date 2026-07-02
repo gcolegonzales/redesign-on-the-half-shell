@@ -41,7 +41,7 @@ Open **`index.html`** in any modern browser (double-click it). Fully static: `in
 
 On-page SEO is built in: unique `<title>` + meta description, a single `<h1>`, JSON-LD structured data (`@type: Restaurant` with real name, phone, address, opening hours, price range, cuisine, image, url, menu, `acceptsReservations`, and `sameAs` links), complete Open Graph + Twitter Card tags, `robots.txt`, and `sitemap.xml`.
 
-**Base URL placeholder.** Canonical, `og:url`, `og:image`/`twitter:image`, the sitemap, `robots.txt`, and the JSON-LD `url`/`image` all use the literal placeholder `https://REPLACE-WITH-DOMAIN.com/`. Before deploying, do a one-line find-and-replace of `REPLACE-WITH-DOMAIN.com` with the real domain across `index.html`, `robots.txt`, and `sitemap.xml`.
+**Base URL placeholder.** Canonical, `og:url`, `og:image`/`twitter:image`, the sitemap, `robots.txt`, and the JSON-LD `url`/`image` all use the literal placeholder `https://onthehalfshell.com/`. Before deploying, do a one-line find-and-replace of `onthehalfshell.com` with the real domain across `index.html`, `robots.txt`, and `sitemap.xml`.
 
 ## Notes
 
