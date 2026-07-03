@@ -2,42 +2,60 @@
 (function () {
   "use strict";
 
-  /* ---- Sticky header shrink-on-scroll ---- */
-  var header = document.getElementById("site-header");
-  var onScroll = function () {
-    if (window.scrollY > 20) header.classList.add("scrolled");
-    else header.classList.remove("scrolled");
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
   /* ---- Mobile nav ---- */
+  var header = document.getElementById("site-header");
   var toggle = document.getElementById("nav-toggle");
   var menu = document.getElementById("nav-menu");
+  var drawer = document.getElementById("nav-drawer");
+  var scrim = document.getElementById("nav-scrim");
+  var isOpen = function () {
+    return drawer.classList.contains("open");
+  };
   var setOpen = function (open) {
+    drawer.classList.toggle("open", open);
     menu.classList.toggle("open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     document.body.style.overflow = open ? "hidden" : "";
+    // Keep the header visible while the menu is open
+    header.classList.toggle("nav-open", open);
+    if (open) header.classList.remove("header-hidden");
   };
   toggle.addEventListener("click", function () {
-    setOpen(!menu.classList.contains("open"));
+    setOpen(!isOpen());
   });
   menu.addEventListener("click", function (e) {
     if (e.target.closest("a")) setOpen(false);
   });
+  if (scrim) {
+    scrim.addEventListener("click", function () {
+      setOpen(false);
+    });
+  }
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") setOpen(false);
   });
-  document.addEventListener("click", function (e) {
-    if (
-      menu.classList.contains("open") &&
-      !e.target.closest("#nav-menu") &&
-      !e.target.closest("#nav-toggle")
-    ) {
-      setOpen(false);
+
+  /* ---- Sticky header: shrink + hide on scroll-down / reveal on scroll-up ---- */
+  var lastY = window.scrollY;
+  var onScroll = function () {
+    var y = window.scrollY;
+    if (y > 20) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+
+    if (!isOpen()) {
+      if (y > lastY && y > 120) {
+        // scrolling down, past the header
+        header.classList.add("header-hidden");
+      } else if (y < lastY) {
+        // any upward scroll reveals immediately
+        header.classList.remove("header-hidden");
+      }
     }
-  });
+    lastY = y;
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   /* ---- Scroll reveal ---- */
   var reveals = document.querySelectorAll(".reveal");

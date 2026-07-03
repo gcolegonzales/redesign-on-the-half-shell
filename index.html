@@ -105,10 +105,7 @@
     </a>
 
     <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
+      <ul class="nav-menu nav-menu-desktop">
         <li><a href="#menu">Menu</a></li>
         <li><a href="#music">Live Music</a></li>
         <li><a href="#events">Events</a></li>
@@ -118,6 +115,22 @@
     </nav>
   </div>
 </header>
+
+<!-- Hamburger + mobile off-canvas drawer live OUTSIDE the backdrop-filtered header
+     so their position:fixed maps to the viewport and they stack above the header. -->
+<button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
+  <ul class="nav-menu" id="nav-menu">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#music">Live Music</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a class="nav-cta" href="#reserve">Request a Table</a></li>
+  </ul>
+</div>
 
 <main id="main">
   <span id="top"></span>
