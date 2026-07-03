@@ -11,19 +11,100 @@
   var isOpen = function () {
     return drawer.classList.contains("open");
   };
+  var main = document.getElementById("main");
+  var focusables = function () {
+    // Toggle stays visible while the drawer is open, so include it in the loop.
+    return [toggle].concat(
+      Array.prototype.slice.call(
+        menu.querySelectorAll("a[href], button:not([disabled])")
+      )
+    );
+  };
   var setOpen = function (open) {
     drawer.classList.toggle("open", open);
     menu.classList.toggle("open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     document.body.style.overflow = open ? "hidden" : "";
+    document.documentElement.style.overflow = open ? "hidden" : "";
     // Keep the header visible while the menu is open
     header.classList.toggle("nav-open", open);
     if (open) header.classList.remove("header-hidden");
+    // Take the off-canvas links out of the tab order when the drawer is closed
+    // so Tab can never reach hidden links.
+    menu.querySelectorAll("a[href]").forEach(function (a) {
+      if (open) a.removeAttribute("tabindex");
+      else a.setAttribute("tabindex", "-1");
+    });
+    // Make the rest of the page inert to keyboard + AT while the drawer is open.
+    if (main) {
+      if (open) {
+        main.setAttribute("aria-hidden", "true");
+        main.setAttribute("inert", "");
+      } else {
+        main.removeAttribute("aria-hidden");
+        main.removeAttribute("inert");
+      }
+    }
+    if (open) {
+      // Move focus into the drawer.
+      var first = menu.querySelector("a[href]");
+      if (first) first.focus();
+    } else {
+      // Return focus to the toggle on close.
+      if (typeof toggle.focus === "function") toggle.focus();
+    }
   };
   toggle.addEventListener("click", function () {
     setOpen(!isOpen());
   });
+  // Trap Tab within the drawer (toggle + menu links) while open.
+  drawer.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || !isOpen()) return;
+    var items = focusables();
+    if (!items.length) return;
+    var firstEl = items[0];
+    var lastEl = items[items.length - 1];
+    var active = document.activeElement;
+    if (e.shiftKey && active === firstEl) {
+      e.preventDefault();
+      lastEl.focus();
+    } else if (!e.shiftKey && active === lastEl) {
+      e.preventDefault();
+      firstEl.focus();
+    }
+  });
+  // The toggle sits outside the drawer element; keep it inside the trap.
+  toggle.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || !isOpen()) return;
+    var items = focusables();
+    if (!items.length) return;
+    if (e.shiftKey && document.activeElement === items[0]) {
+      e.preventDefault();
+      items[items.length - 1].focus();
+    }
+  });
+  // Reset drawer + toggle state when crossing the desktop breakpoint.
+  var mq = window.matchMedia("(min-width: 901px)");
+  var onMq = function () {
+    if (mq.matches && isOpen()) setOpen(false);
+    else if (mq.matches) {
+      // Desktop: ensure drawer links are usable (they're display:none anyway)
+      // and no stale state lingers.
+      menu.querySelectorAll("a[href]").forEach(function (a) {
+        a.removeAttribute("tabindex");
+      });
+    }
+  };
+  if (mq.addEventListener) mq.addEventListener("change", onMq);
+  else if (mq.addListener) mq.addListener(onMq);
+  // Initialize: at mobile widths the drawer starts closed, so pull its links
+  // out of the tab order until it's opened.
+  if (!mq.matches) {
+    menu.querySelectorAll("a[href]").forEach(function (a) {
+      a.setAttribute("tabindex", "-1");
+    });
+  }
   menu.addEventListener("click", function (e) {
     if (e.target.closest("a")) setOpen(false);
   });
