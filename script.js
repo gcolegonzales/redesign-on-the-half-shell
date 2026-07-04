@@ -47,12 +47,13 @@
       }
     }
     if (open) {
-      // Move focus into the drawer.
+      // Move focus into the drawer WITHOUT scrolling the page: focus() would
+      // otherwise scroll the focused link into view and jump the page to top.
       var first = menu.querySelector("a[href]");
-      if (first) first.focus();
+      if (first) first.focus({ preventScroll: true });
     } else {
-      // Return focus to the toggle on close.
-      if (typeof toggle.focus === "function") toggle.focus();
+      // Return focus to the toggle on close (no scroll jump).
+      if (typeof toggle.focus === "function") toggle.focus({ preventScroll: true });
     }
   };
   toggle.addEventListener("click", function () {
